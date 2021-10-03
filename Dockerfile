@@ -1,6 +1,8 @@
 FROM node:14
 
-RUN mkdir /home/cms
-WORKDIR /home/cms
+COPY . /app/
+WORKDIR /app/
 
-CMD ["yarn", "run", "develop"]
+RUN yarn
+
+CMD ["yarn", "start"]
