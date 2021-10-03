@@ -3,7 +3,8 @@ FROM node:14
 COPY . /app/
 WORKDIR /app/
 
-RUN yarn install
-RUN yarn build
+RUN yarn install && \
+    yarn cache clean && \
+    yarn build
 
 CMD ["yarn", "start"]
